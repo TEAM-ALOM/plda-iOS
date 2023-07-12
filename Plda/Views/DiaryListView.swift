@@ -16,6 +16,7 @@ struct DiaryList {
 }
 
 //Views
+//에러 해결...
 struct DiaryListView: View {
     
     
