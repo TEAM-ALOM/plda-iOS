@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-//ViewMdoel
-class DiaryListViewModel: ObservableObject {
+//Models
+class DiaryViewModel: ObservableObject {
     @Published var diary01  = DiaryList(title: "쌀국수 먹은 날", tag: ["#맛집","#행복"],day: 20200823)
-
+    
     var Title: String {
         diary01.title
     }
