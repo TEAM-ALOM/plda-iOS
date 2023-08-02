@@ -1,25 +1,13 @@
 //
-//  DiaryListView.swift
+//  SubPlayView.swift
 //  Plda
 //
-//  Created by 최유경 on 2023/07/11.
+//  Created by 최유경 on 2023/08/01.
 //
 
 import SwiftUI
-import Foundation
 
-//Models
-struct DiaryList {
-    var title: String
-    var tag: [String]
-    //var diaryimage : [Image]
-    var day : Int
-}
-
-//Views
-struct SubDiaryView: View {
-    
-    @StateObject var viewModel = DiaryViewModel()
+struct SubPlayView: View {
     
     var body: some View {
         
@@ -27,9 +15,17 @@ struct SubDiaryView: View {
         
         ScrollView(.vertical, showsIndicators: true){
             VStack{
-                ForEach(title1,id:\.self) { t1 in //사진 없는 일기
+                ForEach(title1,id:\.self) { t1 in
                     HStack{
+                        Image("playlist1")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .clipped()
+                            .cornerRadius(12)
+                            .padding(.leading,10)
+                        
                         VStack(spacing: 5){
+                            
                             HStack{
                                 Text(t1)
                                     .font(
@@ -65,11 +61,11 @@ struct SubDiaryView: View {
                             }
                             
                         }
-                        .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                        .padding(EdgeInsets(top: 10, leading: 3, bottom: 10, trailing: 10))
                         
                     }
                     .background(Color(red: 0.95, green: 0.95, blue: 0.95))
-                    .cornerRadius(6)
+                    .cornerRadius(12)
                     .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
                     
                 }
@@ -84,17 +80,5 @@ struct SubDiaryView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .edgesIgnoringSafeArea(.all))
         
-        ZStack{
-            Button(action: {}) {
-                VStack{
-                    Spacer()
-                    Image("pencil")
-                        .frame(width: 42, height: 42)
-                        .padding(.bottom,50)
-                        .padding(.horizontal,40)
-                }
-            }
-        }
     }
-    
 }
