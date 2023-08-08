@@ -25,22 +25,14 @@ struct MainPlayView: View {
                                     .cornerRadius(5)
                                 HStack{
                                     Text(t1)
-                                        .font(
-                                            Font.custom("Pretendard", size: 16)
-                                                .weight(.bold)
-                                        )
-                                        .kerning(0.384)
-                                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                                        .font(.Bold16)
+                                        .foregroundColor(.black)
                                     Spacer()
                                 }
                                 HStack{
                                     Text("가수")
-                                        .font(
-                                            Font.custom("Pretendard", size: 12)
-                                                .weight(.medium)
-                                        )
-                                        .kerning(0.288)
-                                        .foregroundColor(Color(red: 0.32, green: 0.32, blue: 0.32))
+                                        .font(.Medium12)
+                                        .foregroundColor(.Gray80)
                                     Spacer()
                                 }
                             }
@@ -58,22 +50,14 @@ struct MainPlayView: View {
                                 
                                 HStack{
                                     Text(t1)
-                                        .font(
-                                            Font.custom("Pretendard", size: 16)
-                                                .weight(.bold)
-                                        )
-                                        .kerning(0.384)
-                                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                                        .font(.Bold16)
+                                        .foregroundColor(.black)
                                     Spacer()
                                 }
                                 HStack{
                                     Text("가수")
-                                        .font(
-                                            Font.custom("Pretendard", size: 12)
-                                                .weight(.medium)
-                                        )
-                                        .kerning(0.288)
-                                        .foregroundColor(Color(red: 0.32, green: 0.32, blue: 0.32))
+                                        .font(.Medium12)
+                                        .foregroundColor(.Gray80)
                                     Spacer()
                                 }
                                 

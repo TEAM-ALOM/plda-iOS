@@ -32,35 +32,23 @@ struct SubDiaryView: View {
                         VStack(spacing: 5){
                             HStack{
                                 Text(t1)
-                                    .font(
-                                        Font.custom("Pretendard", size: 16)
-                                            .weight(.bold)
-                                    )
-                                    .kerning(0.384)
+                                    .font(.Bold16)
                                     .multilineTextAlignment(.center)
-                                    .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                                    .foregroundColor(.black)
                                 Spacer()
                                 
                             }
                             HStack{
                                 Text("태그 1 태그 2 태그 3")
-                                    .font(
-                                        Font.custom("Pretendard", size: 12)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.288)
+                                    .font(.Medium12)
                                     .multilineTextAlignment(.center)
-                                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                                    .foregroundColor(.Gray80)
                                 Spacer()
                                 
                                 Text("20230704")
-                                    .font(
-                                        Font.custom("Pretendard", size: 12)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.288)
+                                    .font(.Medium12)
                                     .multilineTextAlignment(.center)
-                                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                                    .foregroundColor(.Gray80)
                                 
                             }
                             
@@ -68,10 +56,9 @@ struct SubDiaryView: View {
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                         
                     }
-                    .background(Color(red: 0.95, green: 0.95, blue: 0.95))
+                    .background(Color.Gray10)
                     .cornerRadius(6)
                     .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
-                    
                 }
                 
             } //VStack
@@ -81,6 +68,7 @@ struct SubDiaryView: View {
         } //스크롤뷰
         
         .background(Image("background")
+            .resizable()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .edgesIgnoringSafeArea(.all))
         

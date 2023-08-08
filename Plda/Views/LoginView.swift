@@ -17,31 +17,17 @@ struct LoginView: View {
             VStack(spacing: 2){
                 HStack{
                     Text("다시 만나 반가워요!")
-                        .font(
-                            Font.custom("Pretendard", size: 16)
-                                .weight(.bold)
-                        )
-                        .kerning(0.384)
-                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                        .font(.Bold16)
+                        .foregroundColor(.black)
                     Spacer()
                 }
                 HStack(spacing: 0){
                     Text("플다")
-                        .font(
-                            Font.custom("Pretendard", size: 16)
-                                .weight(.bold)
-                        )
-                        .kerning(0.384)
-                        .foregroundColor(Color(red: 0.26, green: 0.48, blue: 0.36))
-                    
+                        .font(.Bold16)
+                        .foregroundColor(.DarkGreen)
                     Text("와 오래 함께해요.")
-                        .font(
-                            Font.custom("Pretendard", size: 16)
-                                .weight(.bold)
-                        )
-                        .kerning(0.384)
-                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
-                    
+                        .font(.Bold16)
+                        .foregroundColor(.black)
                     Spacer()
                 }
             }
@@ -63,17 +49,12 @@ struct LoginView: View {
             HStack{
                 Spacer()
                 Text("로그인")
-                    .font(
-                        Font.custom("Pretendard", size: 16)
-                            .weight(.bold)
-                    )
-                    .kerning(0.384)
+                    .font(.Bold16)
                     .foregroundColor(.white)
                     .padding(.vertical,9)
                 Spacer()
             }
-            
-            .background(Color(red: 0.26, green: 0.48, blue: 0.36))
+            .background(Color.DarkGreen)
             .cornerRadius(12)
             .padding(.bottom,100)
             .padding(.horizontal,20)

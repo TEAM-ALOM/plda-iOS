@@ -12,20 +12,13 @@ struct StartView: View {
         
         VStack(spacing: 4){
             Text("PLAY DIARY")
-                .font(
-                    Font.custom("Pretendard", size: 36)
-                        .weight(.heavy)
-                )
+                .font(.ExtraBold)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.26, green: 0.48, blue: 0.36))
+                .foregroundColor(.DarkGreen)
             Text("하루의 기록을 플다와 함께")
-                .font(
-                    Font.custom("Pretendard", size: 16)
-                        .weight(.bold)
-                )
-                .kerning(0.384)
+                .font(.Bold16)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                .foregroundColor(.black)
         }
         .background(Image("background")
             .frame(maxWidth: .infinity, maxHeight: .infinity)

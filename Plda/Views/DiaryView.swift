@@ -12,18 +12,15 @@ struct DiaryView: View {
     var body: some View {
         NavigationView {
             ZStack(){
-                MainDiaryView()
+                SubDiaryView()
             }
             .navigationBarTitle("")
             .navigationBarItems(
                 leading: // title
                 Text("PLAY DIARY")
-                    .font(
-                        Font.custom("Pretendard", size: 36)
-                            .weight(.heavy)
-                    )
+                    .font(.ExtraBold)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.26, green: 0.48, blue: 0.36)),
+                    .foregroundColor(.DarkGreen),
                 trailing:
                     HStack {
                         Button(action: {}) {

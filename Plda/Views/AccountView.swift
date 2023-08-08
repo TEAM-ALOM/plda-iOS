@@ -16,42 +16,31 @@ struct AccountView: View {
             
             HStack{
                 Text("PLAY DIARY")
-                    .font(
-                        Font.custom("Pretendard", size: 36)
-                            .weight(.heavy)
-                    )
+                    .font(.ExtraBold)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color(red: 0.26, green: 0.48, blue: 0.36))
+                    .foregroundColor(.DarkGreen)
             }
             Spacer()
             VStack(spacing: 10){
                 HStack{
                     Spacer()
                     Text("로그인")
-                        .font(
-                            Font.custom("Pretendard", size: 16)
-                                .weight(.bold)
-                        )
-                        .kerning(0.384)
+                        .font(.Bold16)
                         .foregroundColor(.white)
                         .padding(.vertical,9)
                     Spacer()
                 }
-                .background(Color(red: 0.26, green: 0.48, blue: 0.36))
+                .background(Color.DarkGreen)
                 .cornerRadius(12)
                 
                 HStack{
                     Spacer()
                     Text("회원가입")
                         .padding(.vertical,9)
-                        .font(
-                            Font.custom("Pretendard", size: 16)
-                                .weight(.bold)
-                        )
-                        .kerning(0.384)
-                        .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13));                    Spacer()
+                        .font(.Bold16)
+                        .foregroundColor(.black);                    Spacer()
                 }
-                .background(Color(red: 0.61, green: 0.8, blue: 0.58))
+                .background(Color.LightGreen)
                 .cornerRadius(12)
                 
             }

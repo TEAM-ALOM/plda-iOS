@@ -19,33 +19,22 @@ struct MainDiaryView: View {
                         VStack{
                             HStack{
                                 Text(t1)
-                                    .font(
-                                        Font.custom("Pretendard", size: 24)
-                                            .weight(.bold)
-                                    )
-                                    .kerning(0.576)
-                                    .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                                    .font(.Bold24)
+                                    .foregroundColor(.black)
                                 Spacer()
                                 
                             }
                             HStack{
                                 Text("태그 1 태그 2 태그 3")
-                                    .font(
-                                        Font.custom("Pretendard", size: 12)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.288)
-                                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                                    .font(.Medium12)
+                                    .foregroundColor(.Gray80)
                                 
                                 Spacer()
                                 
                                 Text("20230706")
-                                    .font(
-                                        Font.custom("Pretendard", size: 12)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.288)
-                                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                                    .font(.Medium12)
+                                    .foregroundColor(.Gray80)
+
                             }
                         }
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
@@ -53,7 +42,7 @@ struct MainDiaryView: View {
                     }
                     .background(.white)
                     .cornerRadius(6)
-                    .shadow(color: Color(red: 0.26, green: 0.48, blue: 0.36).opacity(0.3), radius: 10, x: 0, y: 4)
+                    .shadow(color: Color.DarkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
                     .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
                     
                 }
@@ -73,33 +62,21 @@ struct MainDiaryView: View {
                             
                             HStack{
                                 Text(t1)
-                                    .font(
-                                        Font.custom("Pretendard", size: 24)
-                                            .weight(.bold)
-                                    )
-                                    .kerning(0.576)
-                                    .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                                    .font(.Bold24)
+                                    .foregroundColor(.black)
                                 Spacer()
                                 
                             }
                             HStack{
                                 Text("태그 1 태그 2 태그 3")
-                                    .font(
-                                        Font.custom("Pretendard", size: 12)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.288)
-                                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                                    .font(.Medium12)
+                                    .foregroundColor(.Gray80)
                                 
                                 Spacer()
                                 
                                 Text("20230706")
-                                    .font(
-                                        Font.custom("Pretendard", size: 12)
-                                            .weight(.medium)
-                                    )
-                                    .kerning(0.288)
-                                    .foregroundColor(Color(red: 0.4, green: 0.4, blue: 0.4))
+                                    .font(.Medium12)
+                                    .foregroundColor(.Gray80)
                             }
                         }
                         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
@@ -107,7 +84,7 @@ struct MainDiaryView: View {
                     }//큰 HStack
                     .background(.white)
                     .cornerRadius(6)
-                    .shadow(color: Color(red: 0.26, green: 0.48, blue: 0.36).opacity(0.3), radius: 10, x: 0, y: 4)
+                    .shadow(color: Color.DarkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
                     .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
                     
                 } //사진 있는 Foreach문
