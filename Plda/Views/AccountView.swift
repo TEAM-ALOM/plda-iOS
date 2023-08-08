@@ -38,16 +38,14 @@ struct AccountView: View {
                     Text("회원가입")
                         .padding(.vertical,9)
                         .font(.Bold16)
-                        .foregroundColor(.black);                    Spacer()
+                        .foregroundColor(.black);
+                    Spacer()
                 }
                 .background(Color.LightGreen)
                 .cornerRadius(12)
-                
             }
             .padding(.bottom,100)
             .padding(.horizontal,20)
-            
-            
         }
         .background(Image("background")
             .frame(maxWidth: .infinity, maxHeight: .infinity)

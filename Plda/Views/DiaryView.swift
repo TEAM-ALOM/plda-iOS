@@ -11,7 +11,7 @@ struct DiaryView: View {
     
     var body: some View {
         NavigationView {
-            ZStack(){
+            ZStack{
                 SubDiaryView()
             }
             .navigationBarTitle("")

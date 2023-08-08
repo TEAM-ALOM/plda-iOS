@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        
         VStack(spacing: 4){
             Text("PLAY DIARY")
                 .font(.ExtraBold)
@@ -24,6 +23,5 @@ struct StartView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .edgesIgnoringSafeArea(.all))
     }
-    
 }
 

@@ -10,9 +10,7 @@ import SwiftUI
 struct PlayView: View {
     var body: some View {
         NavigationView {
-            ZStack(){
-                SubPlayView()
-            }
+            SubPlayView()
             .navigationBarTitle("")
             .navigationBarItems(
                 leading: // title
@@ -25,7 +23,6 @@ struct PlayView: View {
                         Button(action: {}) {
                             Image("home").frame(width: 20, height: 18)
                         }
-                        
                         Button(action: {}) {
                             Image("setting").frame(width: 20, height: 16)
                             
