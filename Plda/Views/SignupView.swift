@@ -80,7 +80,7 @@ struct SignupView: View {
                         .foregroundColor(.Gray80)
                 }
             }.padding(.horizontal,20)
-
+            
             Image("Vector_8")
                 .padding(.top,0)
                 .padding(.horizontal,20)
