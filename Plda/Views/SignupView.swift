@@ -81,7 +81,7 @@ struct SignupView: View {
                 }
             }.padding(.horizontal,20)
             
-            Image("Vector_8")
+            Image("vector")
                 .padding(.top,0)
                 .padding(.horizontal,20)
             

@@ -29,6 +29,9 @@
 		C25259542A6976FD0029DAA1 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25259532A6976FD0029DAA1 /* DiaryView.swift */; };
 		C25259562A6978220029DAA1 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25259552A6978220029DAA1 /* StartView.swift */; };
 		C25259582A6979ED0029DAA1 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25259572A6979ED0029DAA1 /* AccountView.swift */; };
+		C27D9D822A8373E1007FE76E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D9D812A8373E1007FE76E /* SettingView.swift */; };
+		C27D9D842A837F20007FE76E /* EditsettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D9D832A837F20007FE76E /* EditsettingView.swift */; };
+		C27D9D862A839D9A007FE76E /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27D9D852A839D9A007FE76E /* TermsView.swift */; };
 		C27E7A662A5EF2A9006FC695 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C289A9702A58502100A00EA4 /* Assets.xcassets */; };
 		C2B9C0062A790BA100C52E28 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B9C0052A790BA100C52E28 /* LoginView.swift */; };
 		C2B9C0082A793D4E00C52E28 /* MainPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B9C0072A793D4E00C52E28 /* MainPlayView.swift */; };
@@ -55,6 +58,9 @@
 		C25259532A6976FD0029DAA1 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		C25259552A6978220029DAA1 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		C25259572A6979ED0029DAA1 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		C27D9D812A8373E1007FE76E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C27D9D832A837F20007FE76E /* EditsettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditsettingView.swift; sourceTree = "<group>"; };
+		C27D9D852A839D9A007FE76E /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		C289A9692A58502000A00EA4 /* Plda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C289A96C2A58502000A00EA4 /* PldaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PldaApp.swift; sourceTree = "<group>"; };
 		C289A96E2A58502000A00EA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,7 +141,10 @@
 				C2B9C0092A793D6100C52E28 /* SubPlayView.swift */,
 				C2B9C00B2A793DCF00C52E28 /* PlayView.swift */,
 				C2010E2D2A82AF4A000B2D19 /* SignupView.swift */,
+				C27D9D812A8373E1007FE76E /* SettingView.swift */,
 				C2010E2F2A82BD7D000B2D19 /* NameView.swift */,
+				C27D9D832A837F20007FE76E /* EditsettingView.swift */,
+				C27D9D852A839D9A007FE76E /* TermsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 				C2B9C00A2A793D6100C52E28 /* SubPlayView.swift in Sources */,
 				C2312CDE2A61CC690043D394 /* ContentView.swift in Sources */,
 				C2312CDD2A61CC670043D394 /* PldaApp.swift in Sources */,
+				C27D9D822A8373E1007FE76E /* SettingView.swift in Sources */,
 				C2010E332A82C0DC000B2D19 /* KeyboardManager.swift in Sources */,
 				C25259542A6976FD0029DAA1 /* DiaryView.swift in Sources */,
 				C2B9C0082A793D4E00C52E28 /* MainPlayView.swift in Sources */,
@@ -276,6 +286,8 @@
 				C2B9C00C2A793DCF00C52E28 /* PlayView.swift in Sources */,
 				C2010E2B2A828FD7000B2D19 /* ColorManager.swift in Sources */,
 				C2312CDC2A61CC650043D394 /* SubDiaryView.swift in Sources */,
+				C27D9D842A837F20007FE76E /* EditsettingView.swift in Sources */,
+				C27D9D862A839D9A007FE76E /* TermsView.swift in Sources */,
 				C2010E2E2A82AF4A000B2D19 /* SignupView.swift in Sources */,
 				C25259582A6979ED0029DAA1 /* AccountView.swift in Sources */,
 				C2312CE02A61CE0D0043D394 /* MainDiaryView.swift in Sources */,

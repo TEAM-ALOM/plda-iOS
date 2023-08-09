@@ -25,11 +25,9 @@ struct NameView: View {
                 Text("플다가 회원님을")
                     .font(.Bold16)
                     .foregroundColor(.black)
-                
                 Text(" 어떻게 ")
                     .font(.Bold16)
                     .foregroundColor(.DarkGreen)
-                
                 Text("부르면 될까요?")
                     .font(.Bold16)
                     .foregroundColor(.black)

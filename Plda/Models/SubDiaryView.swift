@@ -22,7 +22,7 @@ struct SubDiaryView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
-           diaryListView()
+            diaryListView()
         }
         .background(Image("background")
             .resizable()
@@ -45,7 +45,7 @@ struct SubDiaryView: View {
 }
 private func diaryListView() -> some View {
     @State var title1: [String] = ["제목1", "제목2", "제목3"]
-
+    
     return VStack{
         ForEach(title1,id:\.self) { t1 in
             HStack{
