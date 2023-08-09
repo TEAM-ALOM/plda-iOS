@@ -14,16 +14,6 @@ struct EditsettingView: View {
     var body: some View {
         NavigationView(){
             VStack{
-                HStack(){
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image("leftarrow")
-                    })
-                    Spacer()
-                }
-                .padding(.leading,19)
-                .padding(.top,19)
                 Spacer()
                 Image("profile")
                     .padding(.horizontal,40)
@@ -63,6 +53,18 @@ struct EditsettingView: View {
                 .edgesIgnoringSafeArea(.all))
         }
         .navigationBarBackButtonHidden(true)
-        .navigationBarHidden(true)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack(){
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image("leftarrow")
+                    })
+                    Spacer()
+                }
+            }
+        }
     }
 }

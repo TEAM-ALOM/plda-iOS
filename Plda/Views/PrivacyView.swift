@@ -1,5 +1,5 @@
 //
-//  TermsView.swift
+//  PrivacyView.swift
 //  Plda
 //
 //  Created by 최유경 on 2023/08/09.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TermsView: View {
+struct PrivacyView: View {
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView(){
@@ -34,7 +34,7 @@ struct TermsView: View {
                     }, label: {
                         Image("leftarrow")
                     })
-                    Text("약관 및 이용 동의")
+                    Text("개인정보 취급 방침")
                         .font(.Bold16)
                         .foregroundColor(.Gray80)
                         .accessibilityAddTraits(.isHeader)

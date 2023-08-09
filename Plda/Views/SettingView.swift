@@ -50,7 +50,7 @@ struct SettingView: View {
                         .font(.Bold16)
                         .foregroundColor(.Gray80)
                     Spacer()
-                    NavigationLink(destination: TermsView()) {
+                    NavigationLink(destination: PrivacyView()) {
                         Image("rightarrow")
                     }
                 }.padding(.horizontal,25)
