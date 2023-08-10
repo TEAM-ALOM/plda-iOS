@@ -13,6 +13,7 @@
 		C289A97B2A5D402E00A00EA4 /* DiaryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289A97A2A5D402E00A00EA4 /* DiaryListView.swift */; };
 		C289A97D2A5D407E00A00EA4 /* DiaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C289A97C2A5D407E00A00EA4 /* DiaryListViewModel.swift */; };
 		E66805232A69515C00474B3A /* WritngView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66805222A69515C00474B3A /* WritngView.swift */; };
+		E6AC3ABD2A85000F00AF5C2C /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AC3ABC2A85000F00AF5C2C /* ImagePicker.swift */; };
 		E6AD15972A727C0200ECD359 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6AD158E2A727C0100ECD359 /* Pretendard-Black.otf */; };
 		E6AD15982A727C0200ECD359 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6AD158F2A727C0100ECD359 /* Pretendard-ExtraBold.otf */; };
 		E6AD15992A727C0200ECD359 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6AD15902A727C0100ECD359 /* Pretendard-Regular.otf */; };
@@ -34,6 +35,7 @@
 		C289A97C2A5D407E00A00EA4 /* DiaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewModel.swift; sourceTree = "<group>"; };
 		C289A9812A5ED23000A00EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E66805222A69515C00474B3A /* WritngView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritngView.swift; sourceTree = "<group>"; wrapsLines = 1; };
+		E6AC3ABC2A85000F00AF5C2C /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E6AD158E2A727C0100ECD359 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		E6AD158F2A727C0100ECD359 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		E6AD15902A727C0100ECD359 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				C289A96E2A58502000A00EA4 /* ContentView.swift */,
 				C289A97A2A5D402E00A00EA4 /* DiaryListView.swift */,
 				E66805222A69515C00474B3A /* WritngView.swift */,
+				E6AC3ABC2A85000F00AF5C2C /* ImagePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				E66805232A69515C00474B3A /* WritngView.swift in Sources */,
 				C289A97D2A5D407E00A00EA4 /* DiaryListViewModel.swift in Sources */,
 				C289A96F2A58502000A00EA4 /* ContentView.swift in Sources */,
+				E6AC3ABD2A85000F00AF5C2C /* ImagePicker.swift in Sources */,
 				C289A97B2A5D402E00A00EA4 /* DiaryListView.swift in Sources */,
 				C289A96D2A58502000A00EA4 /* PldaApp.swift in Sources */,
 			);

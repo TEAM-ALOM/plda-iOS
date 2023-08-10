@@ -23,25 +23,6 @@ struct ContentView: View {
     
     
     var body: some View {
-        NavigationView {
-            ZStack(){
-                DiaryListView()
-            }
-            .navigationTitle("PLAY DIARY")
-            .navigationBarTitleDisplayMode(.large)
-            .navigationBarItems(trailing:
-                                    HStack {
-                Button(action: {}) {
-                    Image("heart").frame(width: 20, height: 18)
-                }
-                Button(action: {}) {
-                    Image("setting").frame(width: 20, height: 16)
-                }
-                
-            }
-            )
-            
-        }
-        
+        WritngView()
     }
 }

@@ -11,6 +11,8 @@ struct WritngView: View {
     @State var title : String = ""
     @State var tag : String = ""
     @State var content : String = ""
+    @State var image = UIImage()
+    @State private var openPhoto = false
     
     var body: some View {
         ZStack{
@@ -37,10 +39,27 @@ struct WritngView: View {
                     .frame(height: 1)
                     .background(.black)
                     .padding(.horizontal, 20)
+                Image(uiImage: self.image)
+                        .resizable()
+                        .frame(minWidth: 0, maxWidth: 326)
+                        .frame(width: 326.0, height: 342.0)
+                        .cornerRadius(5)
                 TextEditor(text: $content)
                     .padding(.horizontal, 30)
                     .scrollContentBackground(.hidden)
                     .font(.custom("Pretendard-Medium", size: 12))
+                    .toolbar{
+                        ToolbarItem(placement: .keyboard) {
+                            Button(action: {
+                                self.openPhoto = true
+                            }) {
+                                Image("AddImage")
+                            }
+                            .sheet(isPresented: $openPhoto) {
+                                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
+                            }
+                        }
+                    }
                 Spacer()
             }
         }
