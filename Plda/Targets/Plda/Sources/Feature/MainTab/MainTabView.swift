@@ -14,10 +14,12 @@ public struct MainTabView: View {
     let store: StoreOf<MainTabStore>
     
     public var body: some View {
-        ZStack {
-            
-            Button("ZStack Button") {
-                
+        SwitchStore(self.store) {
+            switch $0 {
+            case .home:
+                CaseLet(/MainTabStore.State.home, action: MainTabStore.Action.home) {
+                    HomeNavigationStackView(store: $0)
+                }
             }
         }
     }

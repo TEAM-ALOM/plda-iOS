@@ -11,9 +11,9 @@ import ComposableArchitecture
 struct OnboardingNavigationStackStore: Reducer {
     
     struct State: Equatable {
-        var path: StackState<Path.State> = .init()
-        
         var main: OnboardingMainStore.State = .init()
+        
+        var path: StackState<Path.State> = .init()
     }
     
     enum Action: BindableAction, Equatable {
@@ -22,6 +22,7 @@ struct OnboardingNavigationStackStore: Reducer {
         case onAppear
         
         case main(OnboardingMainStore.Action)
+        
         case path(StackAction<Path.State, Path.Action>)
         
         case delegate(Delegate)
@@ -57,7 +58,7 @@ struct OnboardingNavigationStackStore: Reducer {
         }
     }
     
-    public var body: some Reducer<State, Action> {
+    public var body: some ReducerOf<Self> {
         BindingReducer()
         
         Reduce { state, action in
@@ -66,6 +67,7 @@ struct OnboardingNavigationStackStore: Reducer {
                 return .none
                 
             case .main(.delegate(.push)):
+                //다음 화면인 sign up으로 이동
                 state.path.append(.signUp(.init()))
                 return .none
                 

@@ -11,15 +11,23 @@ import ComposableArchitecture
 
 struct MainTabStore: Reducer {
 
-    struct State: Equatable {
+    enum State: Equatable {
+        case home(HomeNavigationStackStore.State = .init())
         
+        init() {
+            self = .home(.init())
+        }
     }
     
-    enum Action: Equatable {
-        case empty
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
+        
+        case home(HomeNavigationStackStore.Action)
     }
     
-    public var body: some Reducer<State, Action> {
+    public var body: some ReducerOf<Self> {
+        BindingReducer()
+        
         Reduce { state, action in
             switch action {
             default: return .none

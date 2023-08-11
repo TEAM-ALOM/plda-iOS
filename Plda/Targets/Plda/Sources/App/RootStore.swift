@@ -26,7 +26,7 @@ struct RootStore: Reducer {
         case mainTab(MainTabStore.Action)
     }
     
-    public var body: some Reducer<State, Action> {
+    public var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .onboarding(.delegate(.complete)):
