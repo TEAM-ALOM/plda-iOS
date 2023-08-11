@@ -10,7 +10,7 @@ import SwiftUI
 struct SubPlayView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
-          playListView()
+            playListView()
         }
         .background(Image("background")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -19,7 +19,7 @@ struct SubPlayView: View {
 }
 private func playListView() -> some View {
     @State var title1: [String] = ["제목1", "제목2", "제목3"]
-
+    
     return VStack{
         ForEach(title1,id:\.self) { t1 in
             HStack{

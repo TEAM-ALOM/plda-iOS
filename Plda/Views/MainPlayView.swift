@@ -20,7 +20,7 @@ struct MainPlayView: View {
 
 private func playListView() -> some View {
     @State var title1: [String] = ["Ice Cream Cake", "Butter", "콩떡빙수"]
-
+    
     return VStack{
         ForEach(title1,id:\.self) { t1 in
             HStack{
