@@ -9,15 +9,15 @@ import SwiftUI
 
 extension Color {
     //Green
-    static let DarkGreen = Color(hex: "427A5B")
-    static let LightGreen = Color(hex: "9BCD93")
+    static let darkGreen = Color(hex: "427A5B")
+    static let lightGreen = Color(hex: "9BCD93")
     //Gray
-    static let Gray80 = Color(hex: "666666")
-    static let Gray60 = Color(hex: "999999")
-    static let Gray40 = Color(hex: "CCCCCC")
-    static let Gray20 = Color(hex: "DEDEDE")
-    static let Gray10 = Color(hex: "#F3F3F3")
-    static let Gray0 = Color(hex: "FDFDFD")
+    static let gray80 = Color(hex: "666666")
+    static let gray60 = Color(hex: "999999")
+    static let gray40 = Color(hex: "CCCCCC")
+    static let gray20 = Color(hex: "DEDEDE")
+    static let gray10 = Color(hex: "#F3F3F3")
+    static let gray0 = Color(hex: "FDFDFD")
 
     init(hex: String) {
         let scanner = Scanner(string: hex)

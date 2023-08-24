@@ -23,7 +23,7 @@ struct SettingView: View {
                 HStack(spacing : 0){
                     Spacer()
                     Text("닉네임")
-                        .font(.Bold16)
+                        .font(.bold16)
                         .foregroundColor(.black)
                         .multilineTextAlignment(.center)
                     
@@ -38,8 +38,8 @@ struct SettingView: View {
                     .padding(.horizontal,20)
                 HStack{
                     Text("약관 및 이용 동의")
-                        .font(.Bold16)
-                        .foregroundColor(.Gray80)
+                        .font(.bold16)
+                        .foregroundColor(.gray80)
                     Spacer()
                     NavigationLink(destination: TermsView()) {
                         Image("rightarrow")
@@ -47,8 +47,8 @@ struct SettingView: View {
                 }.padding(.horizontal,25)
                 HStack{
                     Text("개인정보 취급 방침")
-                        .font(.Bold16)
-                        .foregroundColor(.Gray80)
+                        .font(.bold16)
+                        .foregroundColor(.gray80)
                     Spacer()
                     NavigationLink(destination: PrivacyView()) {
                         Image("rightarrow")
@@ -64,15 +64,15 @@ struct SettingView: View {
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     Text("MY")
-                        .font(.Bold16)
-                        .foregroundColor(.DarkGreen)
+                        .font(.bold16)
+                        .foregroundColor(.darkGreen)
                         .accessibilityAddTraits(.isHeader)
                 }
             }
             .navigationBarItems(
                 leading:
                     Button(action: {}) {
-                        Image("leftarrow").frame(width: 20, height: 18)
+                        Image("leftArrow").frame(width: 20, height: 18)
                     }
             )
             .background(Image("background")

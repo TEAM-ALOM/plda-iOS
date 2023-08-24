@@ -21,18 +21,18 @@ struct SignupView: View {
             Spacer()
             HStack(spacing:0){
                 Text("성별")
-                    .font(.Bold16)
-                    .foregroundColor(.DarkGreen)
+                    .font(.bold16)
+                    .foregroundColor(.darkGreen)
                 Text("과 ")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.black)
                 
                 Text("나이")
-                    .font(.Bold16)
-                    .foregroundColor(.DarkGreen)
+                    .font(.bold16)
+                    .foregroundColor(.darkGreen)
                 
                 Text("를 알려 주세요!")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.black)
                 Spacer()
             }
@@ -40,8 +40,8 @@ struct SignupView: View {
             .padding(.bottom,40)
             HStack{
                 Text("성별")
-                    .font(.Bold16)
-                    .foregroundColor(.Gray80)
+                    .font(.bold16)
+                    .foregroundColor(.gray80)
                     .padding(.leading,20)
                 Spacer()
             }
@@ -49,23 +49,23 @@ struct SignupView: View {
                 HStack{
                     Spacer()
                     Text("여성")
-                        .font(.Bold16)
-                        .foregroundColor(.DarkGreen)
+                        .font(.bold16)
+                        .foregroundColor(.darkGreen)
                     Spacer()
                 }
                 .padding(.vertical,10)
-                .background(Color.Gray40)
+                .background(Color.gray40)
                 .cornerRadius(12)
                 
                 HStack{
                     Spacer()
                     Text("남성")
-                        .font(.Bold16)
-                        .foregroundColor(.Gray80)
+                        .font(.bold16)
+                        .foregroundColor(.gray80)
                     Spacer()
                 }
                 .padding(.vertical,10)
-                .background(Color.Gray20)
+                .background(Color.gray20)
                 .cornerRadius(12)
             }
             .padding(.horizontal,20)
@@ -76,8 +76,8 @@ struct SignupView: View {
                 Spacer()
                 DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
                     Text("나이 (출생연도)")
-                        .font(.Bold16)
-                        .foregroundColor(.Gray80)
+                        .font(.bold16)
+                        .foregroundColor(.gray80)
                 }
             }.padding(.horizontal,20)
             
@@ -90,12 +90,12 @@ struct SignupView: View {
             HStack{
                 Spacer()
                 Text("프로필 설정하러 가기")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.white)
                     .padding(.vertical,9)
                 Spacer()
             }
-            .background(Color.DarkGreen)
+            .background(Color.darkGreen)
             .cornerRadius(12)
             .padding(.bottom,100)
             .padding(.horizontal,20)

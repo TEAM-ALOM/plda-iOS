@@ -18,9 +18,9 @@ struct DiaryView: View {
             .navigationBarItems(
                 leading: // title
                 Text("PLAY DIARY")
-                    .font(.ExtraBold)
+                    .font(.extraBold)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.DarkGreen),
+                    .foregroundColor(.darkGreen),
                 trailing:
                     HStack {
                         Button(action: {}) {

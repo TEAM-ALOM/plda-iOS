@@ -9,10 +9,9 @@ import SwiftUI
 
 struct MainDiaryView: View {
     var body: some View {
-        @StateObject var viewModel = DiaryViewModel()
         
         ScrollView(.vertical, showsIndicators: true){
-            ImagediaryListView()
+            imageDiaryListView()
         }
         .background(Image("background")
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -31,29 +30,29 @@ struct MainDiaryView: View {
     }
 }
 
-private func ImagediaryListView() -> some View {
-    @State var title1: [String] = ["제목1", "제목2", "제목3"]
+private func imageDiaryListView() -> some View {
+    @State var title: [String] = ["제목1", "제목2", "제목3"]
     
     return VStack{
-        ForEach(title1,id:\.self) { t1 in //사진 없는 일기
+        ForEach(title,id:\.self) { index in //사진 없는 일기
             HStack{
                 VStack{
                     HStack{
-                        Text(t1)
-                            .font(.Bold24)
+                        Text(index)
+                            .font(.bold24)
                             .foregroundColor(.black)
                         Spacer()
                     }
                     HStack{
                         Text("태그 1 태그 2 태그 3")
-                            .font(.Medium12)
-                            .foregroundColor(.Gray80)
+                            .font(.medium12)
+                            .foregroundColor(.gray80)
                         
                         Spacer()
                         
                         Text("20230706")
-                            .font(.Medium12)
-                            .foregroundColor(.Gray80)
+                            .font(.medium12)
+                            .foregroundColor(.gray80)
                     }
                 }
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
@@ -61,10 +60,11 @@ private func ImagediaryListView() -> some View {
             }
             .background(.white)
             .cornerRadius(6)
-            .shadow(color: Color.DarkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
+            .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
             .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
         }
-        ForEach(title1,id:\.self) { t1 in //사진 있는 일기
+        
+        ForEach(title,id:\.self) { index in //사진 있는 일기
             HStack{
                 VStack{
                     HStack{
@@ -77,21 +77,21 @@ private func ImagediaryListView() -> some View {
                             .clipShape(Rectangle())
                     }
                     HStack{
-                        Text(t1)
-                            .font(.Bold24)
+                        Text(index)
+                            .font(.bold24)
                             .foregroundColor(.black)
                         Spacer()
                     }
                     HStack{
                         Text("태그 1 태그 2 태그 3")
-                            .font(.Medium12)
-                            .foregroundColor(.Gray80)
+                            .font(.medium12)
+                            .foregroundColor(.gray80)
                         
                         Spacer()
                         
                         Text("20230706")
-                            .font(.Medium12)
-                            .foregroundColor(.Gray80)
+                            .font(.medium12)
+                            .foregroundColor(.gray80)
                     }
                 }
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
@@ -99,9 +99,9 @@ private func ImagediaryListView() -> some View {
             }//큰 HStack
             .background(.white)
             .cornerRadius(6)
-            .shadow(color: Color.DarkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
+            .shadow(color: Color.darkGreen.opacity(0.3), radius: 10, x: 0, y: 4)
             .padding(EdgeInsets(top: 5, leading: 20, bottom:0, trailing: 20))
-            
+
         } //사진 있는 Foreach문
         
     } //VStack

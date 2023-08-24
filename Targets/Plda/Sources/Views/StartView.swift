@@ -11,11 +11,11 @@ struct StartView: View {
     var body: some View {
         VStack(spacing: 4){
             Text("PLAY DIARY")
-                .font(.ExtraBold)
+                .font(.extraBold)
                 .multilineTextAlignment(.center)
-                .foregroundColor(.DarkGreen)
+                .foregroundColor(.darkGreen)
             Text("하루의 기록을 플다와 함께")
-                .font(.Bold16)
+                .font(.bold16)
                 .multilineTextAlignment(.center)
                 .foregroundColor(.black)
         }

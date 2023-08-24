@@ -19,10 +19,10 @@ struct MainPlayView: View {
 }
 
 private func playListView() -> some View {
-    @State var title1: [String] = ["Ice Cream Cake", "Butter", "콩떡빙수"]
+    @State var title: [String] = ["Ice Cream Cake", "Butter", "콩떡빙수"]
     
     return VStack{
-        ForEach(title1,id:\.self) { t1 in
+        ForEach(title,id:\.self) { index in
             HStack{
                 Spacer()
                 HStack(spacing: 15){
@@ -33,15 +33,15 @@ private func playListView() -> some View {
                             .clipped()
                             .cornerRadius(5)
                         HStack{
-                            Text(t1)
-                                .font(.Bold16)
+                            Text(index)
+                                .font(.bold16)
                                 .foregroundColor(.black)
                             Spacer()
                         }
                         HStack{
                             Text("가수")
-                                .font(.Medium12)
-                                .foregroundColor(.Gray80)
+                                .font(.medium12)
+                                .foregroundColor(.gray80)
                             Spacer()
                         }
                     }
@@ -56,15 +56,15 @@ private func playListView() -> some View {
                             .clipped()
                             .cornerRadius(5)
                         HStack{
-                            Text(t1)
-                                .font(.Bold16)
+                            Text(index)
+                                .font(.bold16)
                                 .foregroundColor(.black)
                             Spacer()
                         }
                         HStack{
                             Text("가수")
-                                .font(.Medium12)
-                                .foregroundColor(.Gray80)
+                                .font(.medium12)
+                                .foregroundColor(.gray80)
                             Spacer()
                         }
                     }
