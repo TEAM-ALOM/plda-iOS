@@ -11,17 +11,17 @@ import SwiftUI
 
 extension Font {
     // ExtraBold
-    static let ExtraBold: Font = .custom("Pretendard-ExtraBold", size: 36)
+    static let extraBold: Font = .custom("Pretendard-ExtraBold", size: 36)
 
     // Bold
-    static let Bold24: Font = .custom("Pretendard-Bold", size: 24)
-    static let Bold16: Font = .custom("Pretendard-Bold", size: 16)
+    static let bold24: Font = .custom("Pretendard-Bold", size: 24)
+    static let bold16: Font = .custom("Pretendard-Bold", size: 16)
     
     // SemiBold
-    static let SemiBold: Font = .custom("Pretendard-SemiBold", size: 20)
+    static let semiBold: Font = .custom("Pretendard-SemiBold", size: 20)
     
     // Medium
-    static let Medium16: Font = .custom("Pretendard-Medium", size: 16)
-    static let Medium12: Font = .custom("Pretendard-Medium", size: 12)
+    static let medium16: Font = .custom("Pretendard-Medium", size: 16)
+    static let medium12: Font = .custom("Pretendard-Medium", size: 12)
     
 }

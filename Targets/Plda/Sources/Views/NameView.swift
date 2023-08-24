@@ -15,7 +15,7 @@ struct NameView: View {
             Spacer()
             HStack(){
                 Text("마지막으로,")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.black)
                 Spacer()
             }
@@ -23,13 +23,13 @@ struct NameView: View {
             
             HStack(spacing:0){
                 Text("플다가 회원님을")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.black)
                 Text(" 어떻게 ")
-                    .font(.Bold16)
-                    .foregroundColor(.DarkGreen)
+                    .font(.bold16)
+                    .foregroundColor(.darkGreen)
                 Text("부르면 될까요?")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.black)
                 Spacer()
             }
@@ -51,12 +51,12 @@ struct NameView: View {
             HStack{
                 Spacer()
                 Text("회원가입 완료")
-                    .font(.Bold16)
+                    .font(.bold16)
                     .foregroundColor(.white)
                     .padding(.vertical,9)
                 Spacer()
             }
-            .background(Color.DarkGreen)
+            .background(Color.darkGreen)
             .cornerRadius(12)
             .padding(.bottom,100)
             .padding(.horizontal,20)

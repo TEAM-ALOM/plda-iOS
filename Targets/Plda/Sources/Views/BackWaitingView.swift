@@ -1,5 +1,5 @@
 //
-//  WaitingView.swift
+//  WaitingView2.swift
 //  Plda
 //
 //  Created by 최유경 on 2023/08/16.
@@ -8,24 +8,23 @@
 
 import SwiftUI
 
-struct WaitingView1: View {
+struct BackWaitingView: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack{
-            Text("오늘 하루")
-                .font(.Bold16)
-                .foregroundColor(.black)
             
             ZStack{
-                Image("ribbon1")
-                Image("Vector9")
-               
-            } .padding(.top,0)
+                Image("Placeholder")
+                Image("vector9")
+                Image("ribbonHeart")
+                
+            }
+            .padding(.top,0)
                 .padding(.horizontal,20)
             
-            Text("힘들었던 당신을 위해")
-                .font(.Bold16)
+            Text("위로가 될 수 있는 음악을 찾고 있어요")
+                .font(.bold16)
                 .foregroundColor(.black)
       
         }
@@ -40,7 +39,7 @@ struct WaitingView1: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("leftarrow")
+                        Image("leftArrow")
                     })
                     Spacer()
                 }
@@ -49,8 +48,8 @@ struct WaitingView1: View {
     }
 }
 
-struct WaitingView_Previews: PreviewProvider {
+struct WaitingView2_Previews: PreviewProvider {
     static var previews: some View {
-        WaitingView1()
+        BackWaitingView()
     }
 }

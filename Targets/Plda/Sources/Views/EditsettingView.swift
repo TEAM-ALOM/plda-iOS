@@ -30,12 +30,12 @@ struct EditsettingView: View {
                 HStack{
                     Spacer()
                     Text("변경")
-                        .font(.Bold16)
+                        .font(.bold16)
                         .foregroundColor(.white)
                         .padding(.vertical,9)
                     Spacer()
                 }
-                .background(Color.DarkGreen)
+                .background(Color.darkGreen)
                 .cornerRadius(12)
                 .padding(.horizontal,20)
                 
@@ -43,8 +43,8 @@ struct EditsettingView: View {
                 HStack{
                     Spacer()
                     Text("로그아웃")
-                        .font(.Bold16)
-                        .foregroundColor(.Gray60)
+                        .font(.bold16)
+                        .foregroundColor(.gray60)
                 }.padding(.trailing,25)
                     .padding(.bottom,30)
             }
@@ -60,7 +60,7 @@ struct EditsettingView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("leftarrow")
+                        Image("leftArrow")
                     })
                     Spacer()
                 }

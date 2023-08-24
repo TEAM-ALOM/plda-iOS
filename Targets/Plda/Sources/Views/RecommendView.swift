@@ -8,49 +8,54 @@
 
 import SwiftUI
 
+
 struct RecommendView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        
+        let image1 = PldaAsset.PreviewAssets.song
         VStack{
             HStack(spacing: 0){
-                Image("LeftVector")
+                Image("leftVector")
                     .padding(.trailing,7)
                 
                 Text("오늘의")
-                    .font(.Bold24)
+                    .font(.bold24)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
                 
                 Text(" 플다 pick")
-                    .font(.Bold24)
+                    .font(.bold24)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.DarkGreen)
+                    .foregroundColor(.darkGreen)
                 
-                Image("RightVector")
+                Image("rightVector")
                     .padding(.leading,7)
                 
             }
             Text("Ice Cream Cake")
                 .foregroundColor(.black)
-                .font(.Medium16)
+                .font(.medium16)
                 .padding(.top,45)
             
             Text("Red Velvet (레드벨벳)")
                 .foregroundColor(.black)
-                .font(.Medium12)
+                .font(.medium12)
+                   
             
-            Image("song")
+            
+            //Image(PldaAsset.PreviewAssets.song)
+                Image("song")
                 .padding(.horizontal,20)
                 .padding(.top,20)
             
-            Image("heart")
+            
+            Image("heartGray")
                 .padding(.top,14)
             
             HStack{
                 Text("playlist 확인하러 가기")
-                    .font(.Medium12)
+                    .font(.medium12)
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
                     .padding(.horizontal,25)
@@ -58,7 +63,7 @@ struct RecommendView: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 7)
-                    .stroke(Color.LightGreen, lineWidth: 2)
+                    .stroke(Color.lightGreen, lineWidth: 2)
             )
             .padding(.top,10)
             

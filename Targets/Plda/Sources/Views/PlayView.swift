@@ -15,9 +15,9 @@ struct PlayView: View {
                 .navigationBarItems(
                     leading: // title
                     Text("PLAY LIST")
-                        .font(.ExtraBold)
+                        .font(.extraBold)
                         .multilineTextAlignment(.center)
-                        .foregroundColor(.DarkGreen),
+                        .foregroundColor(.darkGreen),
                     trailing:
                         HStack {
                             Button(action: {}) {

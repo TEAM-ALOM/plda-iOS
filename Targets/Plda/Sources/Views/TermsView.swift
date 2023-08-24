@@ -16,7 +16,7 @@ struct TermsView: View {
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 Spacer()
-                TextView()
+                textView()
                 Spacer()
             }
             .background(Image("background")
@@ -32,11 +32,11 @@ struct TermsView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("leftarrow")
+                        Image("leftArrow")
                     })
                     Text("약관 및 이용 동의")
-                        .font(.Bold16)
-                        .foregroundColor(.Gray80)
+                        .font(.bold16)
+                        .foregroundColor(.gray80)
                         .accessibilityAddTraits(.isHeader)
                     Spacer()
                 }
@@ -44,18 +44,18 @@ struct TermsView: View {
         }
     }
 }
-private func TextView() -> some View {
+private func textView() -> some View {
     ScrollView(.vertical, showsIndicators: true){
         VStack{
             Text("① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다.① 당 사이트는 귀하가 본 약관 내용에 동의하는 것을 조건으로 귀하에게 서비스를 제공할 것이며, 귀하가 본 약관의 내용에 동의하는 경우, 당 사이트의 서비스 제공 행위 및 귀하의 서비스 사용 행위에는 본 약관이 우선적으로 적용됩니다")
-                .font(.Medium16)
-                .foregroundColor(.Gray80)
+                .font(.medium16)
+                .foregroundColor(.gray80)
                 .padding(.all,10)
                 .multilineTextAlignment(.leading)
         }
         .background(.white)
         .cornerRadius(6)
         .padding(.horizontal,20)
-        .shadow(color: Color.Gray60.opacity(0.3), radius: 10, x: 0, y: 4)
+        .shadow(color: Color.gray60.opacity(0.3), radius: 10, x: 0, y: 4)
     }
 }

@@ -16,32 +16,32 @@ struct AccountView: View {
             
             HStack{
                 Text("PLAY DIARY")
-                    .font(.ExtraBold)
+                    .font(.extraBold)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.DarkGreen)
+                    .foregroundColor(.darkGreen)
             }
             Spacer()
             VStack(spacing: 10){
                 HStack{
                     Spacer()
                     Text("로그인")
-                        .font(.Bold16)
+                        .font(.bold16)
                         .foregroundColor(.white)
                         .padding(.vertical,9)
                     Spacer()
                 }
-                .background(Color.DarkGreen)
+                .background(Color.darkGreen)
                 .cornerRadius(12)
                 
                 HStack{
                     Spacer()
                     Text("회원가입")
                         .padding(.vertical,9)
-                        .font(.Bold16)
+                        .font(.bold16)
                         .foregroundColor(.black);
                     Spacer()
                 }
-                .background(Color.LightGreen)
+                .background(Color.lightGreen)
                 .cornerRadius(12)
             }
             .padding(.bottom,100)
