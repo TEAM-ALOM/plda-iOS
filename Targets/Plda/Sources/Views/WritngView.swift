@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct WritngView: View {
     @State var title : String = ""
     @State var tag : String = ""
     @State var content : String = ""
-    @State var image = UIImage()
-    @State private var openPhoto = false
+    @State var isNew: Bool = true
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImageData: Data? = nil
     
     var body: some View {
         ZStack{
@@ -21,6 +23,7 @@ struct WritngView: View {
                 .ignoresSafeArea()
             VStack{
                 WritingNavgionBar()
+                
                 TextField("제목", text: $title)
                     .padding(.horizontal, 30)
                     .font(.system(size: 24))
@@ -39,45 +42,78 @@ struct WritngView: View {
                     .frame(height: 1)
                     .background(.black)
                     .padding(.horizontal, 20)
-                Image(uiImage: self.image)
+                
+                if let selectedImageData,
+                   let uiImage = UIImage(data: selectedImageData) {
+                    Image(uiImage: uiImage)
                         .resizable()
                         .frame(minWidth: 0, maxWidth: 326)
                         .frame(width: 326.0, height: 342.0)
                         .cornerRadius(5)
+                }
+                
                 TextEditor(text: $content)
                     .padding(.horizontal, 30)
                     .scrollContentBackground(.hidden)
                     .font(.custom("Pretendard-Medium", size: 12))
                     .toolbar{
                         ToolbarItem(placement: .keyboard) {
-                            Button(action: {
-                                self.openPhoto = true
-                            }) {
-                                Image("AddImage")
-                            }
-                            .sheet(isPresented: $openPhoto) {
-                                ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
-                            }
+                            PhotosPicker(
+                                    selection: $selectedItem,
+                                    matching: .images,
+                                    photoLibrary: .shared()) {
+                                        Button(action: {
+
+                                        }) {
+                                            Image("AddImage")
+                                        }
+                                    }
+                                    .onChange(of: selectedItem) { newItem in
+                                                    Task {
+                                                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                                            selectedImageData = data
+                                                        }
+                                                    }
+                                                }
                         }
                     }
                 Spacer()
+                if isNew {
+                    Button("노래 들을 준비 완료!"){}
+                        .buttonStyle(roundedRectangle())
+                        .padding(.bottom, 13)
+                    Button("조금 더 작성할래요."){}
+                        .buttonStyle(roundedRectangle(backgroundColor: .gray10, foregroundColor: .black))
+                        .padding(.bottom, 100)
+                }
+                else {
+                    Button("일기 수정하기"){}
+                        .buttonStyle(roundedRectangle())
+                        .padding(.bottom, 13)
+                    Button("노래 추천 다시 받기"){}
+                        .buttonStyle(roundedRectangle(backgroundColor: .lightGreen))
+                        .padding(.bottom, 100)
+                }
+                
             }
         }
     }
 }
 
 struct WritingNavgionBar: View{
-    @State var showingAlert: Bool = false
+    @State var showingExitAlert: Bool = false
+    @State var showingSaveAlert: Bool = false
+    @State var diaryCnt: Int = 1
 
     var body: some View {
         HStack{
             Button(action: {
-                showingAlert = true
+                showingExitAlert = true
             }, label: {
                 Image("preBtn")
             })
             .padding(.leading, 20)
-            .alert(isPresented: $showingAlert) {
+            .alert(isPresented: $showingExitAlert) {
                 Alert(
                     title: Text("잠깐! 지금 나가면 일기가 저장되지 않아요."),
                     message: Text("그래도 나갈까요?"),
@@ -87,15 +123,34 @@ struct WritingNavgionBar: View{
             Spacer()
             
             Button(action: {
-                
+//                showingSaveAlert = true
             }, label: {
                 Image("PlaylistIcon")
             })
             .padding(.trailing, 20)
+//            .alert(isPresented: $showingSaveAlert) {
+//                Alert(
+//                    title: Text("노래 추천을 다시 할까요?"),
+//                    message: Text("노래 추천은 하루 3회 가능해요.(\(diaryCnt)/3)"),
+//                    primaryButton: .destructive(Text("네, 다시 추천 받을래요.")), secondaryButton: .cancel(Text("아니요, 잘못 눌렀어요.")))
+//            }
         }
         .padding(.bottom, 13)
         .padding(.top, 15)
     }
+}
+
+struct roundedRectangle: ButtonStyle {
+    var backgroundColor: Color = .darkGreen
+    var foregroundColor: Color = .white
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .foregroundColor(foregroundColor)
+            .background(RoundedRectangle(cornerRadius: 12)
+                .fill(backgroundColor)
+                .frame(width: 350, height: 38))
+                .font(.semiBold)}
 }
 
 struct WritngView_Previews: PreviewProvider {
