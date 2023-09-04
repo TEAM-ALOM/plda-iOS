@@ -13,7 +13,9 @@ import ComposableArchitecture
 public struct OnboardingSignUpView: View {
     let store: StoreOf<OnboardingSignUpStore>
     @State private var birthDate = Date()
-
+    @State private var tapButtonText = false
+    @State private var tapButtonBackground = false
+    
     public var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack{
@@ -44,17 +46,27 @@ public struct OnboardingSignUpView: View {
                         .padding(.leading,20)
                     Spacer()
                 }
+                
+                if tapButtonText{
+                    Color.darkGreen
+                }
+                
+                
                 HStack(spacing:10){
                     HStack{
                         Spacer()
                         Text("여성")
                             .font(.bold16)
-                            .foregroundColor(.darkGreen)
+                            .foregroundColor(.gray80)
                         Spacer()
                     }
                     .padding(.vertical,10)
-                    .background(Color.gray40)
+                    .background(Color.gray20)
                     .cornerRadius(12)
+                    .onTapGesture {
+                        self.tapButtonText.toggle()
+                        self.tapButtonBackground.toggle()
+                    }
                     
                     HStack{
                         Spacer()
@@ -80,7 +92,7 @@ public struct OnboardingSignUpView: View {
                     }
                 }.padding(.horizontal,20)
                 
-                PldaAsset.Images.vector9.swiftUIImage
+                PldaAsset.Images.vectorGray.swiftUIImage
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 
@@ -88,18 +100,19 @@ public struct OnboardingSignUpView: View {
                 
                 HStack{
                     Spacer()
-                    Button("프로필 설정하러 가기"){
-                        viewStore.send(.nextButtonTapped)
-                    }
-                    .font(.bold16)
-                    .foregroundColor(.white)
-                    .padding(.vertical,9)
+                    Text("프로필 설정하러 가기")
+                        .font(.bold16)
+                        .foregroundColor(.white)
+                        .padding(.vertical,9)
                     Spacer()
                 }
                 .background(Color.darkGreen)
                 .cornerRadius(12)
                 .padding(.bottom,100)
                 .padding(.horizontal,20)
+                .onTapGesture {
+                    viewStore.send(.nextButtonTapped)
+                }
             }
             .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
