@@ -11,12 +11,12 @@ struct SettingView: View {
     var body: some View {
         NavigationView {
             VStack{
-                Image("vector")
+                PldaAsset.Images.vector9.swiftUIImage
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 
                 Spacer()
-                Image("profile")
+                PldaAsset.Images.profile.swiftUIImage
                     .padding(.horizontal,40)
                     .padding(.bottom,12)
                 
@@ -28,12 +28,13 @@ struct SettingView: View {
                         .multilineTextAlignment(.center)
                     
                     NavigationLink(destination: EditsettingView()) {
-                        Image("rightarrow")
+                        PldaAsset.Images.rightArrow.swiftUIImage
                     }
                     Spacer()
                 }
                 Spacer()
-                Image("vector")
+                
+                PldaAsset.Images.vector9.swiftUIImage
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 HStack{
@@ -42,7 +43,7 @@ struct SettingView: View {
                         .foregroundColor(.gray80)
                     Spacer()
                     NavigationLink(destination: TermsView()) {
-                        Image("rightarrow")
+                        PldaAsset.Images.rightArrow.swiftUIImage
                     }
                 }.padding(.horizontal,25)
                 HStack{
@@ -51,11 +52,11 @@ struct SettingView: View {
                         .foregroundColor(.gray80)
                     Spacer()
                     NavigationLink(destination: PrivacyView()) {
-                        Image("rightarrow")
+                        PldaAsset.Images.rightArrow.swiftUIImage
                     }
                 }.padding(.horizontal,25)
                 
-                Image("vector")
+                PldaAsset.Images.vector9.swiftUIImage
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 Spacer()
@@ -72,12 +73,12 @@ struct SettingView: View {
             .navigationBarItems(
                 leading:
                     Button(action: {}) {
-                        Image("leftArrow").frame(width: 20, height: 18)
+                        PldaAsset.Images.leftArrow.swiftUIImage
+                            .frame(width: 20, height: 18)
                     }
             )
-            .background(Image("background")
+            .background(PldaAsset.Images.background.swiftUIImage)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all))
         }
     }
     

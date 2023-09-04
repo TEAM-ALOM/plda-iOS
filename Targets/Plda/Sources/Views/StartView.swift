@@ -19,9 +19,8 @@ struct StartView: View {
                 .multilineTextAlignment(.center)
                 .foregroundColor(.black)
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
     }
 }
 

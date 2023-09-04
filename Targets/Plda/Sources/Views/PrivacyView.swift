@@ -12,16 +12,15 @@ struct PrivacyView: View {
     var body: some View {
         NavigationView(){
             VStack{
-                Image("vector")
+                PldaAsset.Images.vector9.swiftUIImage
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 Spacer()
                 textView()
                 Spacer()
             }
-            .background(Image("background")
+            .background(PldaAsset.Images.background.swiftUIImage)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all))
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
@@ -32,7 +31,7 @@ struct PrivacyView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("leftArrow")
+                        PldaAsset.Images.leftArrow.swiftUIImage
                     })
                     Text("개인정보 취급 방침")
                         .font(.bold16)

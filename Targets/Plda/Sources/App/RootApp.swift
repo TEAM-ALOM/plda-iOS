@@ -12,6 +12,11 @@ import ComposableArchitecture
 
 @main
 struct RootApp: App {
+    
+    init() {
+          Thread.sleep(forTimeInterval: 2)
+      }
+    
     var body: some Scene {
         WindowGroup {
             RootView(

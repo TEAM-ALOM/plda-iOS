@@ -13,14 +13,14 @@ struct RecommendView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        let image1 = PldaAsset.PreviewAssets.song
         VStack{
             HStack(spacing: 0){
-                Image("leftVector")
+                PldaAsset.Images.leftVector.swiftUIImage
                     .padding(.trailing,7)
                 
                 Text("오늘의")
-                    .font(.bold24)
+                    .font(PldaFontFamily.Pretendard.bold.swiftUIFont(size: 24))
+                
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
                 
@@ -29,28 +29,25 @@ struct RecommendView: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.darkGreen)
                 
-                Image("rightVector")
+                PldaAsset.Images.rightVector.swiftUIImage
                     .padding(.leading,7)
                 
             }
             Text("Ice Cream Cake")
                 .foregroundColor(.black)
-                .font(.medium16)
+                .font(.bold16)
                 .padding(.top,45)
             
             Text("Red Velvet (레드벨벳)")
                 .foregroundColor(.black)
                 .font(.medium12)
-                   
             
-            
-            //Image(PldaAsset.PreviewAssets.song)
-                Image("song")
+
+            PldaAsset.Images.song.swiftUIImage
                 .padding(.horizontal,20)
                 .padding(.top,20)
             
-            
-            Image("heartGray")
+            PldaAsset.Images.heartGray.swiftUIImage
                 .padding(.top,14)
             
             HStack{
@@ -68,21 +65,19 @@ struct RecommendView: View {
             .padding(.top,10)
             
             HStack{
-                Image("good")
+                PldaAsset.Images.good.swiftUIImage
                     .padding(.leading,40)
                 Spacer()
-                Image("play")
+                PldaAsset.Images.play.swiftUIImage
                 Spacer()
-                Image("bad")
+                PldaAsset.Images.bad.swiftUIImage
                     .padding(.trailing,40)
-
                 
             }.padding(.top,100)
             
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -91,7 +86,7 @@ struct RecommendView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("home")
+                        PldaAsset.Images.home.swiftUIImage
                     })
                     Spacer()
                 }

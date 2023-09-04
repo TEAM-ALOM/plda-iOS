@@ -12,16 +12,15 @@ struct TermsView: View {
     var body: some View {
         NavigationView(){
             VStack{
-                Image("vector")
+                PldaAsset.Images.vector9.swiftUIImage
                     .padding(.top,0)
                     .padding(.horizontal,20)
                 Spacer()
                 textView()
                 Spacer()
             }
-            .background(Image("background")
+            .background(PldaAsset.Images.background.swiftUIImage)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all))
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
@@ -32,7 +31,7 @@ struct TermsView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("leftArrow")
+                        PldaAsset.Images.leftArrow.swiftUIImage
                     })
                     Text("약관 및 이용 동의")
                         .font(.bold16)

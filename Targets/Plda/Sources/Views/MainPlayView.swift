@@ -12,9 +12,8 @@ struct MainPlayView: View {
         ScrollView(.vertical, showsIndicators: true){
             playListView()
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
     }
 }
 
@@ -27,7 +26,7 @@ private func playListView() -> some View {
                 Spacer()
                 HStack(spacing: 15){
                     VStack{
-                        Image("playlist1")
+                        PldaAsset.Images.song.swiftUIImage
                             .resizable()
                             .frame(height: 150)
                             .clipped()
@@ -50,7 +49,7 @@ private func playListView() -> some View {
                     .cornerRadius(5)
                     
                     VStack{
-                        Image("playlist1")
+                        PldaAsset.Images.song.swiftUIImage
                             .resizable()
                             .frame(height: 150)
                             .clipped()
