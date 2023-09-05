@@ -13,8 +13,8 @@ import ComposableArchitecture
 public struct OnboardingSignUpView: View {
     let store: StoreOf<OnboardingSignUpStore>
     @State private var birthDate = Date()
-    @State private var tapButtonText = false
-    @State private var tapButtonBackground = false
+    @State private var tapButtonFemale = false
+    @State private var tapButtonMale = false
     
     public var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -47,37 +47,41 @@ public struct OnboardingSignUpView: View {
                     Spacer()
                 }
                 
-                if tapButtonText{
-                    Color.darkGreen
-                }
-                
-                
                 HStack(spacing:10){
                     HStack{
                         Spacer()
                         Text("여성")
                             .font(.bold16)
-                            .foregroundColor(.gray80)
+                            .foregroundColor(self.tapButtonFemale ? .darkGreen : .gray80)
                         Spacer()
                     }
                     .padding(.vertical,10)
-                    .background(Color.gray20)
+                    .background(self.tapButtonFemale ? Color.gray40 : Color.gray20)
                     .cornerRadius(12)
                     .onTapGesture {
-                        self.tapButtonText.toggle()
-                        self.tapButtonBackground.toggle()
+                        self.tapButtonFemale.toggle()
+                        if tapButtonMale {
+                            self.tapButtonMale.toggle()
+                        }
                     }
                     
                     HStack{
                         Spacer()
                         Text("남성")
                             .font(.bold16)
-                            .foregroundColor(.gray80)
+                            .foregroundColor(self.tapButtonMale ? .darkGreen : .gray80)
                         Spacer()
                     }
                     .padding(.vertical,10)
-                    .background(Color.gray20)
+                    .background(self.tapButtonMale ? Color.gray40 : Color.gray20)
                     .cornerRadius(12)
+                    .onTapGesture {
+                        self.tapButtonMale.toggle()
+                        if tapButtonFemale {
+                            self.tapButtonFemale.toggle()
+                        }
+                    }
+                    
                 }
                 .padding(.horizontal,20)
                 .padding(.top,0)
