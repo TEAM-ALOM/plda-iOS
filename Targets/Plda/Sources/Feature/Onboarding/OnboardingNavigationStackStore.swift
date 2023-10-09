@@ -76,6 +76,8 @@ struct OnboardingNavigationStackStore: Reducer {
                 state.path.append(.userInfo(.init()))
                 return .none
                 
+            //이까지 구현
+                
             case .path(.element(id: _, action: .userInfo(.delegate(.push)))):
                 //다음 화면인 nickname으로 이동
                 state.path.append(.nickname(.init()))

@@ -13,6 +13,9 @@ import ComposableArchitecture
 public struct OnboardingUserInfoView: View {
     let store: StoreOf<OnboardingUserInfoStore>
     @State private var name = ""
+    @State private var showingAlert: Bool = false
+
+    @Environment(\.dismiss) private var dismiss
     
     public var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -40,7 +43,7 @@ public struct OnboardingUserInfoView: View {
                 }
                 .padding(.leading,20)
                 .padding(.bottom,68)
-                
+  
                 PldaAsset.Images.profile.swiftUIImage
                     .padding(.horizontal,40)
                     .padding(.bottom,30)
@@ -51,7 +54,7 @@ public struct OnboardingUserInfoView: View {
                     .keyboardType(.emailAddress)
                     .disableAutocorrection(true)
                     .padding(.horizontal,20)
-                
+            
                 Spacer()
                 HStack{
                     Spacer()
@@ -66,11 +69,33 @@ public struct OnboardingUserInfoView: View {
                 .padding(.bottom,100)
                 .padding(.horizontal,20)
                 .onTapGesture {
-                    viewStore.send(.nextButtonTapped)
+                    if (name == ""){
+                        self.showingAlert = true
+                    }
+                    else{
+                        viewStore.send(.nextButtonTapped)
+                    }
                 }
+                .alert(isPresented: $showingAlert, content: {
+                            Alert(title: Text("정보를 입력해주세요"), dismissButton: .default(Text("확인")))
+                        })
+                
             }
             .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        PldaAsset.Images.leftArrow.swiftUIImage
+                    }
+                }
+            }
+        }
     }
 }
+

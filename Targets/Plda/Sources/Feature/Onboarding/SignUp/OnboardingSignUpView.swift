@@ -13,8 +13,9 @@ import ComposableArchitecture
 public struct OnboardingSignUpView: View {
     let store: StoreOf<OnboardingSignUpStore>
     @State private var birthDate = Date()
-    @State private var tapButtonFemale = false
-    @State private var tapButtonMale = false
+    @State private var showingAlert: Bool = false
+
+    @Environment(\.dismiss) private var dismiss
     
     public var body: some View {
         WithViewStore(self.store, observe: { $0 }) { viewStore in
@@ -52,48 +53,49 @@ public struct OnboardingSignUpView: View {
                         Spacer()
                         Text("여성")
                             .font(.bold16)
-                            .foregroundColor(self.tapButtonFemale ? .darkGreen : .gray80)
+                            .foregroundColor(viewStore.state.tapButtonFemale ? .darkGreen : .gray80)
                         Spacer()
                     }
                     .padding(.vertical,10)
-                    .background(self.tapButtonFemale ? Color.gray40 : Color.gray20)
+                    .background(viewStore.state.tapButtonFemale ? Color.gray40 : Color.gray20)
                     .cornerRadius(12)
                     .onTapGesture {
-                        self.tapButtonFemale.toggle()
-                        if tapButtonMale {
-                            self.tapButtonMale.toggle()
-                        }
+                        viewStore.send(.femaleButtonTapped)
                     }
                     
                     HStack{
                         Spacer()
                         Text("남성")
                             .font(.bold16)
-                            .foregroundColor(self.tapButtonMale ? .darkGreen : .gray80)
+                            .foregroundColor(viewStore.state.tapButtonMale ? .darkGreen : .gray80)
                         Spacer()
                     }
                     .padding(.vertical,10)
-                    .background(self.tapButtonMale ? Color.gray40 : Color.gray20)
+                    .background(viewStore.state.tapButtonMale ? Color.gray40 : Color.gray20)
                     .cornerRadius(12)
                     .onTapGesture {
-                        self.tapButtonMale.toggle()
-                        if tapButtonFemale {
-                            self.tapButtonFemale.toggle()
-                        }
+                        viewStore.send(.maleButtonTapped)
                     }
                     
                 }
                 .padding(.horizontal,20)
                 .padding(.top,0)
                 .padding(.bottom,60)
+
                 
                 HStack{
                     Spacer()
-                    DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
+                   
+                    //안되는 코드
+                   /* DatePicker(selection: viewStore.binding(get: \.selectedDate, OnboardingMainStore.Action.setDate), in: ...Date(), displayedComponents: .date)*/
+                    
+                    //되는 코드
+                    DatePicker(selection: viewStore.binding(get: \.selectedDate, send: OnboardingSignUpStore.Action.setDate)) {
                         Text("나이 (출생연도)")
                             .font(.bold16)
                             .foregroundColor(.gray80)
                     }
+
                 }.padding(.horizontal,20)
                 
                 PldaAsset.Images.vectorGray.swiftUIImage
@@ -115,12 +117,35 @@ public struct OnboardingSignUpView: View {
                 .padding(.bottom,100)
                 .padding(.horizontal,20)
                 .onTapGesture {
-                    viewStore.send(.nextButtonTapped)
+                    if (viewStore.state.tapButton){
+                        viewStore.send(.nextButtonTapped)
+                    }
+                    else{
+                        self.showingAlert = true
+                    }
                 }
+                .alert(isPresented: $showingAlert, content: {
+                            Alert(title: Text("정보를 입력해주세요"), dismissButton: .default(Text("확인")))
+                        })
+                
             }
             .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    HStack {
+                        PldaAsset.Images.leftArrow.swiftUIImage
+                    }
+                }
+            }
         }
     }
     
 }
+
