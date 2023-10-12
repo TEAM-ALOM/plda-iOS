@@ -12,9 +12,9 @@ import ComposableArchitecture
 
 public struct OnboardingUserInfoView: View {
     let store: StoreOf<OnboardingUserInfoStore>
-    @State private var name = ""
+    //    @State private var name = ""
     @State private var showingAlert: Bool = false
-
+    
     @Environment(\.dismiss) private var dismiss
     
     public var body: some View {
@@ -43,18 +43,18 @@ public struct OnboardingUserInfoView: View {
                 }
                 .padding(.leading,20)
                 .padding(.bottom,68)
-  
+                
                 PldaAsset.Images.profile.swiftUIImage
                     .padding(.horizontal,40)
                     .padding(.bottom,30)
                 
-                TextField("닉네임", text: $name)
+                TextField("닉네임", text: viewStore.binding(get: \.name, send: OnboardingUserInfoStore.Action.setName))
                     .multilineTextAlignment(.center)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .keyboardType(.emailAddress)
                     .disableAutocorrection(true)
                     .padding(.horizontal,20)
-            
+                
                 Spacer()
                 HStack{
                     Spacer()
@@ -69,17 +69,14 @@ public struct OnboardingUserInfoView: View {
                 .padding(.bottom,100)
                 .padding(.horizontal,20)
                 .onTapGesture {
-                    if (name == ""){
-                        self.showingAlert = true
-                    }
-                    else{
-                        viewStore.send(.nextButtonTapped)
-                    }
+                    viewStore.send(.nextButtonTapped)
                 }
-                .alert(isPresented: $showingAlert, content: {
-                            Alert(title: Text("정보를 입력해주세요"), dismissButton: .default(Text("확인")))
-                        })
-                
+                .alert(
+                    store: self.store.scope(
+                        state: \.$alert,
+                        action: { .alert($0) }
+                    )
+                )
             }
             .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)

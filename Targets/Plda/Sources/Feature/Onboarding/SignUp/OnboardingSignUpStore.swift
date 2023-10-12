@@ -13,7 +13,6 @@ struct OnboardingSignUpStore: Reducer {
 
     struct State: Equatable {
         var tapButton: Bool = false
-        //var showingAlert: Bool = false
 
         var tapButtonFemale: Bool = false
         var tapButtonMale: Bool = false
@@ -29,12 +28,11 @@ struct OnboardingSignUpStore: Reducer {
         case maleButtonTapped
         
         case setDate(Date)
-        
-        //case showingAlertTapped
-        
+                
         case delegate(Delegate)
         
         enum Delegate: Equatable {
+            case tmp(Date)
             case push
         }
     }
@@ -61,11 +59,7 @@ struct OnboardingSignUpStore: Reducer {
                 
             case let .setDate(date):
                 state.selectedDate = date
-                return .none
-                                
-//            case .showingAlertTapped:
-//                state.showingAlert = true
-//                return .none
+                return .send(.delegate(.tmp(date)))
                 
             default:
                 return .none
