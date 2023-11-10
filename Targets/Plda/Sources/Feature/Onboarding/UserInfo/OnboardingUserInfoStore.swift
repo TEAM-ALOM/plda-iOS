@@ -49,6 +49,7 @@ struct OnboardingUserInfoStore: Reducer {
                         TextState("정보를 입력해주세요")
                     } actions: {
                         ButtonState(role: .destructive, action: .confirmDeletion) {
+                            
                             TextState("확인")
                         }
                     }

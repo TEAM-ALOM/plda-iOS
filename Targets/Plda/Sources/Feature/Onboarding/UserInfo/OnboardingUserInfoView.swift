@@ -12,12 +12,20 @@ import ComposableArchitecture
 
 public struct OnboardingUserInfoView: View {
     let store: StoreOf<OnboardingUserInfoStore>
-    //    @State private var name = ""
-    @State private var showingAlert: Bool = false
+    
+    public var body: some View {
+        userInfoView(store: store)
+    }
+}
+
+struct userInfoView : View {
+    
+    let store: StoreOf<OnboardingUserInfoStore>
     
     @Environment(\.dismiss) private var dismiss
     
-    public var body: some View {
+    var body: some View {
+        
         WithViewStore(self.store, observe: { $0 }) { viewStore in
             VStack{
                 Spacer()
@@ -80,6 +88,7 @@ public struct OnboardingUserInfoView: View {
             }
             .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
@@ -93,6 +102,6 @@ public struct OnboardingUserInfoView: View {
                 }
             }
         }
+        
     }
 }
-

@@ -64,7 +64,12 @@ extension Project {
             infoPlist: .extendingDefault(with: infoPlist),
             sources: ["Targets/\(name)/Sources/**"],
             resources: ["Targets/\(name)/Resources/**"],
-            dependencies: dependencies
+            dependencies: dependencies, 
+            settings: .settings(
+                base: SettingsDictionary().otherLinkerFlags(["-ObjC"]),
+                configurations: [
+                ]
+            )
         )
 
         let testTarget = Target(
