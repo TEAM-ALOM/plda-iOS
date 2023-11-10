@@ -21,10 +21,12 @@ struct PlayView: View {
                     trailing:
                         HStack {
                             Button(action: {}) {
-                                Image("home").frame(width: 20, height: 18)
+                                PldaAsset.Images.home.swiftUIImage
+                                    .frame(width: 20, height: 18)
                             }
                             Button(action: {}) {
-                                Image("setting").frame(width: 20, height: 16)
+                                PldaAsset.Images.setting.swiftUIImage
+                                    .frame(width: 20, height: 16)
                                 
                             }
                         })

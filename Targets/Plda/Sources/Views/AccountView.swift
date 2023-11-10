@@ -47,9 +47,8 @@ struct AccountView: View {
             .padding(.bottom,100)
             .padding(.horizontal,20)
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
     }
 }
 

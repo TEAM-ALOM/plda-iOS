@@ -6,31 +6,64 @@
 //  Copyright © 2023 alom.com. All rights reserved.
 //
 
+import Foundation
 import ComposableArchitecture
 
 struct OnboardingSignUpStore: Reducer {
 
     struct State: Equatable {
+        var tapButton: Bool = false
+
+        var tapButtonFemale: Bool = false
+        var tapButtonMale: Bool = false
         
+        @BindingState var selectedDate: Date = .now
     }
     
-    enum Action: Equatable {
-        case nextButtonTapped
+    enum Action: BindableAction, Equatable {
+        case binding(BindingAction<State>)
         
+        case nextButtonTapped
+        case femaleButtonTapped
+        case maleButtonTapped
+        
+        case setDate(Date)
+                
         case delegate(Delegate)
         
-        enum Delegate {
+        enum Delegate: Equatable {
+            case tmp(Date)
             case push
         }
     }
     
-    func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        switch action {
-        case .nextButtonTapped:
-            return .send(.delegate(.push))
-            
-        default:
-            return .none
+    var body: some ReducerOf<Self> {
+        BindingReducer()
+        Reduce { state, action in
+            switch action {
+            case .nextButtonTapped:
+                return .send(.delegate(.push))
+                
+            case .femaleButtonTapped:
+                state.tapButtonFemale.toggle()
+                state.tapButtonMale = false
+                state.tapButton = true
+                return .none
+                
+            case .maleButtonTapped:
+                state.tapButtonMale.toggle()
+                state.tapButtonFemale = false
+                state.tapButton = true
+
+                return .none
+                
+            case let .setDate(date):
+                state.selectedDate = date
+                return .send(.delegate(.tmp(date)))
+                
+            default:
+                return .none
+            }
         }
     }
 }

@@ -13,14 +13,13 @@ struct MainDiaryView: View {
         ScrollView(.vertical, showsIndicators: true){
             imageDiaryListView()
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
         ZStack{
             Button(action: {}) {
                 VStack{
                     Spacer()
-                    Image("pencil")
+                    PldaAsset.Images.pencil.swiftUIImage
                         .frame(width: 42, height: 42)
                         .padding(.bottom,50)
                         .padding(.horizontal,40)
@@ -68,7 +67,7 @@ private func imageDiaryListView() -> some View {
             HStack{
                 VStack{
                     HStack{
-                        Image("diary")
+                        PldaAsset.Images.diary.swiftUIImage
                             .aspectRatio(contentMode: .fill)
                             .frame(height:130)
                             .clipped()

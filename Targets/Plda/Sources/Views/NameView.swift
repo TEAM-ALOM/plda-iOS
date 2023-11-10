@@ -36,7 +36,7 @@ struct NameView: View {
             .padding(.leading,20)
             .padding(.bottom,68)
             
-            Image("profile")
+            PldaAsset.Images.profile.swiftUIImage
                 .padding(.horizontal,40)
                 .padding(.bottom,30)
             
@@ -61,9 +61,8 @@ struct NameView: View {
             .padding(.bottom,100)
             .padding(.horizontal,20)
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
     }
 }
 

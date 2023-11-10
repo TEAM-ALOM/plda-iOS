@@ -81,7 +81,7 @@ struct SignupView: View {
                 }
             }.padding(.horizontal,20)
             
-            Image("vector")
+            PldaAsset.Images.vector9.swiftUIImage
                 .padding(.top,0)
                 .padding(.horizontal,20)
             
@@ -100,8 +100,7 @@ struct SignupView: View {
             .padding(.bottom,100)
             .padding(.horizontal,20)
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
     }
 }

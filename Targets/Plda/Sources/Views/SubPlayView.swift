@@ -12,9 +12,8 @@ struct SubPlayView: View {
         ScrollView(.vertical, showsIndicators: true){
             playListView()
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
     }
 }
 private func playListView() -> some View {
@@ -23,7 +22,7 @@ private func playListView() -> some View {
     return VStack{
         ForEach(title,id:\.self) { index in
             HStack{
-                Image("playlist1")
+                PldaAsset.Images.song.swiftUIImage
                     .resizable()
                     .frame(width: 40, height: 40)
                     .clipped()

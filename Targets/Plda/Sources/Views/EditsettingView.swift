@@ -15,7 +15,7 @@ struct EditsettingView: View {
         NavigationView(){
             VStack{
                 Spacer()
-                Image("profile")
+                PldaAsset.Images.profile.swiftUIImage
                     .padding(.horizontal,40)
                     .padding(.bottom,80)
                 
@@ -48,9 +48,8 @@ struct EditsettingView: View {
                 }.padding(.trailing,25)
                     .padding(.bottom,30)
             }
-            .background(Image("background")
+            .background(PldaAsset.Images.background.swiftUIImage)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .edgesIgnoringSafeArea(.all))
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)

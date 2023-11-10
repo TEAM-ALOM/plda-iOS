@@ -24,11 +24,13 @@ struct DiaryView: View {
                 trailing:
                     HStack {
                         Button(action: {}) {
-                            Image("heart").frame(width: 20, height: 18)
+                            PldaAsset.Images.heart.swiftUIImage
+                                .frame(width: 20, height: 18)
                         }
                         
                         Button(action: {}) {
-                            Image("setting").frame(width: 20, height: 16)
+                            PldaAsset.Images.setting.swiftUIImage
+                                .frame(width: 20, height: 16)
                             
                         }
                     })

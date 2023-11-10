@@ -15,9 +15,9 @@ struct BackWaitingView: View {
         VStack{
             
             ZStack{
-                Image("Placeholder")
-                Image("vector9")
-                Image("ribbonHeart")
+                PldaAsset.Images.placeholder.swiftUIImage
+                PldaAsset.Images.vector9.swiftUIImage
+                PldaAsset.Images.ribbonHeart.swiftUIImage
                 
             }
             .padding(.top,0)
@@ -28,9 +28,8 @@ struct BackWaitingView: View {
                 .foregroundColor(.black)
       
         }
-        .background(Image("background")
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
         .navigationBarBackButtonHidden(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -39,7 +38,7 @@ struct BackWaitingView: View {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("leftArrow")
+                        PldaAsset.Images.leftArrow.swiftUIImage
                     })
                     Spacer()
                 }

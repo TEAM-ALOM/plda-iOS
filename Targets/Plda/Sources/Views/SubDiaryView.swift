@@ -22,16 +22,14 @@ struct SubDiaryView: View {
         ScrollView(.vertical, showsIndicators: true){
             diaryListView()
         }
-        .background(Image("background")
-            .resizable()
+        .background(PldaAsset.Images.background.swiftUIImage)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .edgesIgnoringSafeArea(.all))
         
         ZStack{
             Button(action: {}) {
                 VStack{
                     Spacer()
-                    Image("pencil")
+                    PldaAsset.Images.pencil.swiftUIImage
                         .frame(width: 42, height: 42)
                         .padding(.bottom,50)
                         .padding(.horizontal,40)

@@ -8,7 +8,7 @@
 import ProjectDescription
 
 let spm = SwiftPackageManagerDependencies([
-    .remote(url: "https://github.com/pointfreeco/swift-composable-architecture", requirement: .upToNextMajor(from: "1.0.0"))
+    .remote(url: "https://github.com/pointfreeco/swift-composable-architecture", requirement: .upToNextMajor(from: "1.2.0"))
 ])
 
 let dependencies = Dependencies(
