@@ -8,14 +8,23 @@
 
 import SwiftUI
 
-struct ButtonStyle: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct roundedRectangleBorder: ButtonStyle {
+    var backgroundColor: Color = .lightGreen
+    var foregroundColor: Color = .white
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 350, height: 38)
+            .background(backgroundColor)
+            .cornerRadius(12)
+            .font(.bold16)
+            .foregroundColor(foregroundColor)
     }
 }
 
-struct ButtonStyle_Previews: PreviewProvider {
+struct roundedRectangleBorder_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonStyle()
+        Button("Hello"){}
+            .buttonStyle(roundedRectangleBorder())
     }
 }

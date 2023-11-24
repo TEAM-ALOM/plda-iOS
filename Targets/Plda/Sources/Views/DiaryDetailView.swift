@@ -68,20 +68,6 @@ struct RecommendSheetView: View {
     }
 }
 
-struct roundedRectangleBorder: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .foregroundColor(.black)
-            .background()
-                .cornerRadius(10)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.lightGreen, lineWidth: 1.5))
-                .frame(width: 162, height: 32)
-                .font(.medium12)}
-}
-
 struct DiaryDetailView: View {
     @State var title : String = ""
     @State var tag : String = ""
@@ -130,10 +116,10 @@ struct DiaryDetailView: View {
                     .font(.medium12)
                 Spacer()
                 Button("일기 수정하기"){}
-                    .buttonStyle(roundedRectangle())
+                    .buttonStyle(roundedRectangleBorder())
                     .padding(.bottom, 13)
                 Button("노래 추천 다시 받기"){}
-                    .buttonStyle(roundedRectangle(backgroundColor: .lightGreen))
+                    .buttonStyle(roundedRectangleBorder())
                     .padding(.bottom, 100)
             }
             .background(PldaAsset.PreviewAssets.background.swiftUIImage
